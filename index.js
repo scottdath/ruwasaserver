@@ -95,15 +95,15 @@ const online =()=>{
    
 }
 
-// setInterval(hhcdataFetch,10000)
-// setInterval(pddataFetch,5000)
-// setInterval(zndataFetch,15000)
-// setInterval(hhcweeklyfetch,8000)
-// setInterval(pdweeklyfetch,20000)
-// setInterval(znweeklyfetch,30000)
-// setInterval(homecommandFetch,1400)
-// setInterval(zncommandFetch,1700)
-// setInterval(pdcommandFetch,11000)
+setInterval(hhcdataFetch,10000)
+setInterval(pddataFetch,5000)
+setInterval(zndataFetch,15000)
+setInterval(hhcweeklyfetch,8000)
+setInterval(pdweeklyfetch,20000)
+setInterval(znweeklyfetch,30000)
+setInterval(homecommandFetch,1400)
+setInterval(zncommandFetch,1700)
+setInterval(pdcommandFetch,11000)
 
 
 
