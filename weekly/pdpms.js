@@ -161,7 +161,7 @@ export const pdweeklyfetch = async() =>
             
             
 }).catch(err=>{
-  console.log('Failed to fetch pd weekly data')
+  console.log('')
 })
           
 }
