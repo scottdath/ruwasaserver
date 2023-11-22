@@ -57,7 +57,7 @@ app.use(cors({
   }));
 
 
-app.get("/test",(req,res)=>{di
+app.get("/test",(req,res)=>{
     console.log("testing okey");
     return res.json("ruwasa database testing: okey");
 })
