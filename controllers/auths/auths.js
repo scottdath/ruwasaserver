@@ -51,7 +51,7 @@ export const register = (req,res)=>{
 }
 
 export const login = (req,res)=>{
-    // console.log(req.body)
+    console.log(req.body)
     data.getConnection((err, connection) => {
         if(!err) {
         connection.query('SELECT * FROM users WHERE username = ?', [req.body.username], (err, rows) => {
