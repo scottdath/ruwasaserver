@@ -180,7 +180,7 @@ export const znweeklyfetch = async() =>
             
             
 }).catch(err=>{
-  console.log('Failed to fetch zonal weekly data')
+  console.log('')
 })
           
 }
