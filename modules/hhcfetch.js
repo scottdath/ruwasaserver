@@ -187,7 +187,7 @@ export const hhcdataFetch = async() =>
             
             
 }).catch(err=>{
-  console.log('ERROR WHILE FETCHING HOME DATA')
+  console.log('')
 })
           
 }
