@@ -82,6 +82,171 @@ data.getConnection((err,connection)=>{
 
 
 
+data.query(`CREATE TABLE IF NOT EXISTS hhcmessages (
+    id INT(255) UNIQUE PRIMARY KEY AUTO_INCREMENT,
+    metertype VARCHAR(255),
+    reportdate VARCHAR(255),
+    reporttime VARCHAR(255),
+    litres VARCHAR(255),
+    messageno VARCHAR(255),
+    meterid VARCHAR(255),
+    meterno VARCHAR(255),
+    temper VARCHAR(255),
+    username VARCHAR(255),
+    userId VARCHAR(255),
+    region VARCHAR(255),
+    district VARCHAR(255),
+    location VARCHAR(255),
+    regionId VARCHAR(255),
+    status VARCHAR(255),
+    regdate VARCHAR(255),
+    bill VARCHAR(255),
+    regstatus VARCHAR(255),
+    resetstatus VARCHAR(255),
+    clearstatus VARCHAR(255)
+  )`, (err, result) => {
+    if (err) throw err;
+  });
+
+  data.query(`CREATE TABLE IF NOT EXISTS znmessages (
+    id INT(255) UNIQUE PRIMARY KEY AUTO_INCREMENT,
+    metertype VARCHAR(255),
+    reportdate VARCHAR(255),
+    reporttime VARCHAR(255),
+    litres VARCHAR(255),
+    messageno VARCHAR(255),
+    meterid VARCHAR(255),
+    meterno VARCHAR(255),
+    temper VARCHAR(255),
+    username VARCHAR(255),
+    userId VARCHAR(255),
+    region VARCHAR(255),
+    district VARCHAR(255),
+    location VARCHAR(255),
+    regionId VARCHAR(255),
+    status VARCHAR(255),
+    regdate VARCHAR(255),
+    bill VARCHAR(255),
+    regstatus VARCHAR(255),
+    resetstatus VARCHAR(255),
+    clearstatus VARCHAR(255)
+  )`, (err, result) => {
+    if (err) throw err;
+  });
+
+  data.query(`CREATE TABLE IF NOT EXISTS pdmessages (
+    id INT(255) UNIQUE PRIMARY KEY AUTO_INCREMENT,
+    metertype VARCHAR(255),
+    reportdate VARCHAR(255),
+    reporttime VARCHAR(255),
+    litres VARCHAR(255),
+    address VARCHAR(255),
+    meterid VARCHAR(255),
+    meterno VARCHAR(255),
+    temper VARCHAR(255),
+    username VARCHAR(255),
+    messageid VARCHAR(255),
+    userid VARCHAR(255),
+    messageno VARCHAR(255),
+    region VARCHAR(255),
+    location VARCHAR(255),
+    regionid VARCHAR(255),
+    regdate VARCHAR(255),
+    bill VARCHAR(255)
+  )`, (err, result) => {
+    if (err) throw err;
+  });
+
+  data.query(`CREATE TABLE IF NOT EXISTS pdmeters (
+    id INT(255) UNIQUE PRIMARY KEY AUTO_INCREMENT,
+    metertype VARCHAR(255),
+    meterid VARCHAR(255),
+    meterno VARCHAR(255),
+    region VARCHAR(255),
+    district VARCHAR(255),
+    regdate VARCHAR(255),
+    status VARCHAR(255),
+    location VARCHAR(255),
+    consumption VARCHAR(255),
+    temper VARCHAR(255),
+    regionid VARCHAR(255),
+    regstatus VARCHAR(255),
+    resetstatus VARCHAR(255),
+    clearstatus VARCHAR(255)
+  )`, (err, result) => {
+    if (err) throw err;
+  });
+
+  data.query(`CREATE TABLE IF NOT EXISTS pmsdaily (
+    id INT(255) UNIQUE PRIMARY KEY AUTO_INCREMENT,
+    meterno VARCHAR(255),
+    morning VARCHAR(255),
+    evening VARCHAR(255),
+    night VARCHAR(255)
+  )`, (err, result) => {
+    if (err) throw err;
+  });
+
+  data.query(`CREATE TABLE IF NOT EXISTS pmsweekly (
+    id INT(255) UNIQUE PRIMARY KEY AUTO_INCREMENT,
+    days VARCHAR(255),
+    hhc VARCHAR(255),
+    public VARCHAR(255),
+    zonal VARCHAR(255)
+  )`, (err, result) => {
+    if (err) throw err;
+  });
+
+
+
+  data.query(`CREATE TABLE IF NOT EXISTS users (
+    id INT(255) UNIQUE PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(255),
+    password VARCHAR(255),
+    reporttime VARCHAR(255)
+  )`, (err, result) => {
+    if (err) throw err;
+
+    const q = "SELECT * FROM users WHERE username = ? ";
+     data.query(q,['admin'],(err,datas)=>{
+      if (err) return err;
+      if (datas.length) return console.log('existing data')
+  
+      const salt = bcrypt.genSaltSync(10)
+      const hash = bcrypt.hashSync('admin',salt)
+  
+  
+      data.getConnection((err, connection) => {
+          if(err) throw err
+  
+                  
+          const params = {'username':'admin', 'password':hash};
+      
+          // console.log(params)
+  
+  
+          
+          connection.query('INSERT INTO users SET ?', params, (err, rows) => {
+          connection.release() 
+          if (!err) {
+              
+          } else {
+              
+          }
+          
+          })
+  
+        })
+  
+      })
+  });
+
+  
+
+  
+
+
+
 const online =()=>{
         console.log('online status')
         const url_to_customer = `https://ruwasa-scottackc1.uk1.pitunnel.com//index.php?app=ws&u=admin&h=04d209b72f2c2982c462f592a3981408&op=pv&to=+255742519823&msg=online`
