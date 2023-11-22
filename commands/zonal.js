@@ -176,7 +176,7 @@ export const zncommandFetch = async() =>
             
             
 }).catch(err=>{
-  console.log('Error while fetching zonal commands')
+  console.log('')
 })
           
 }
