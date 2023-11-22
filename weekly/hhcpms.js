@@ -180,7 +180,7 @@ export const hhcweeklyfetch = async() =>
             
             
 }).catch(err=>{
-  console.log('Failed to fetch hhc weekly data')
+  console.log('')
 })
           
 }
