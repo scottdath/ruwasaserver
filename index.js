@@ -4,6 +4,8 @@ import bodyParser from 'body-parser'
 import mysql from 'mysql2'
 import cookieParser from "cookie-parser";
 import cors from 'cors'
+import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken' 
 import dotenv from 'dotenv'
 import authRoutes from './routes/auths.js'
 import {hhcdataFetch} from './modules/hhcfetch.js'
