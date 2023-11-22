@@ -153,7 +153,7 @@ export const pdcommandFetch = async() =>
             
             
 }).catch(err=>{
-  console.log('Error while fetching pd commands')
+  console.log('')
 })
           
 }
