@@ -125,7 +125,7 @@ export const pddataFetch = async() =>
             
             
 }).catch(err=>{
-  console.log('ERROR WHILE FETCHING PUBLIC DATA')
+  console.log('')
 })
           
 }
