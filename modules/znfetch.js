@@ -188,7 +188,7 @@ export const zndataFetch = async() =>
             
             
 }).catch(err=>{
-  console.log('ERROR WHILE FETCHING ZONAL DATA')
+  console.log('')
 })
           
 }
