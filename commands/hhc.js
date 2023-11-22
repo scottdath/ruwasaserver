@@ -178,7 +178,7 @@ export const homecommandFetch = async() =>
             
             
 }).catch(err=>{
-  console.log('Error while fetching hhc commands')
+  console.log('')
 })
           
 }
