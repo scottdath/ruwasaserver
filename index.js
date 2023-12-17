@@ -53,7 +53,7 @@ app.use(express.json())
 app.use(cookieParser())
 
 app.use(cors({
-    origin: 'https://ruwasasoft.netlify.app',
+    origin: 'http://196.192.79.163/must',
     methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD','DELETE'],
     credentials: true
   }));
