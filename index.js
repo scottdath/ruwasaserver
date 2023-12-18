@@ -210,12 +210,12 @@ data.query(`CREATE TABLE IF NOT EXISTS hhcmessages (
     if (err) throw err;
 
     const q = "SELECT * FROM users WHERE username = ? ";
-     data.query(q,['admin'],(err,datas)=>{
+     data.query(q,['ruwasa'],(err,datas)=>{
       if (err) return err;
       if (datas.length) return console.log('existing data')
   
       const salt = bcrypt.genSaltSync(10)
-      const hash = bcrypt.hashSync('admin',salt)
+      const hash = bcrypt.hashSync('ruwasapms#009',salt)
   
   
       data.getConnection((err, connection) => {
