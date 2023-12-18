@@ -57,10 +57,10 @@ export const zndataFetch = async() =>
                             const metertyp = full_list[0]
                             const address = full_list[2]
                             const meterid = full_list[1]
-                            const reportdate = full_list[3]
-                            const reporttime = full_list[4] 
-                            const litres = full_list[5]
-                            let temper = full_list[6]
+                            const reportdate = full_list[2]
+                            const reporttime = full_list[3] 
+                            const litres = full_list[4]
+                            let temper = full_list[5]
                             const meterno = result.src
 
                             const ltres = litres.split('\n')[0]
