@@ -46,8 +46,10 @@ export const hhcdataFetch = async() =>
                         let data_length = full_list.length
                         let messageid = result.id
                         console.log(full_list) 
-                          console.log(data_length)
-                        if (data_length > 3) {
+
+                        if (data_length === 1){
+                                console.log("sing data mode")
+                        } else  if (data_length > 3) {
                          
                           const metertype = full_list[0]
                           
