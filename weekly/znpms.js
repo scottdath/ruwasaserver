@@ -7,7 +7,7 @@ import e from 'express';
 
 dotenv.config()
 
-const URL_RUWASA = process.env.RUWASAURL
+const URL_RUWASA = "https://ruwasa-datamod.uk1.pitunnel.com//index.php?app=ws&u=admin&h=04d209b72f2c2982c462f592a3981408&op=sx&kwd=ruwasa&format=json"
 
 export const znweeklyfetch = async() =>
 {   const now = new Date();
