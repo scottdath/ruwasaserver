@@ -45,7 +45,7 @@ export const hhcdataFetch = async() =>
                         let full_list = in_msg.split( '#' )
                         let data_length = full_list.length
                         let messageid = result.id
-                        // console.log(full_list) 
+                        console.log(full_list) 
                         if (data_length > 3) {
                          
                           const metertype = full_list[0]
@@ -53,7 +53,7 @@ export const hhcdataFetch = async() =>
                           
 
                           if (metertype==='@ruwasahhc'){
-                            // console.log(metertype)
+                            console.log(metertype)
                             const metertyp = full_list[0]
                             const address = full_list[2]
                             const meterid = full_list[1]
@@ -64,7 +64,7 @@ export const hhcdataFetch = async() =>
                             const meterno = result.src
 
                             const ltres = litres.split('\n')[0]
-                            // console.log()
+                            console.log(ltres)
 
                             if (temper=='0'){
                               temper = "off"
