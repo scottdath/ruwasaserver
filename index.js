@@ -201,7 +201,7 @@ data.query(`CREATE TABLE IF NOT EXISTS hhcmessages (
 
 
 
-  data.query(`CREATE TABLE IF NOT EXISTS users (
+  data.query(`CREATE TABLE IF NOT EXISTS user (
     id INT(255) UNIQUE PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(255),
     password VARCHAR(255),
