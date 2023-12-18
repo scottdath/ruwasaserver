@@ -7,7 +7,7 @@ import jwt from 'jsonwebtoken'
 export const register = (req,res)=>{
 
     
-    const q = "SELECT * FROM users WHERE id = ? OR name = ? ";
+    const q = "SELECT * FROM user WHERE id = ? OR name = ? ";
    data.query(q,[req.body.id,req.body.username],(err,datas)=>{
     if (err) return res.json(err)
     if (datas.length) return res.status(409).json("User already exists!")
@@ -29,7 +29,7 @@ export const register = (req,res)=>{
 
 
         
-        connection.query('INSERT INTO users SET ?', params, (err, rows) => {
+        connection.query('INSERT INTO user SET ?', params, (err, rows) => {
         connection.release() 
         if (!err) {
             // console.log("account create successful")
@@ -54,7 +54,7 @@ export const login = (req,res)=>{
     console.log(req.body)
     data.getConnection((err, connection) => {
         if(!err) {
-        connection.query('SELECT * FROM users WHERE username = ?', [req.body.username], (err, rows) => {
+        connection.query('SELECT * FROM user WHERE username = ?', [req.body.username], (err, rows) => {
             connection.release() 
             if(err) return res.json(err);
             if(rows.length===0) return res.json("User not Found!")
