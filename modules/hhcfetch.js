@@ -6,7 +6,7 @@ import date from 'date-and-time';
 
 dotenv.config()
 
-const URL_RUWASA = process.env.RUWASAURL
+const URL_RUWASA = "https://ruwasa-datamod.uk1.pitunnel.com//index.php?app=ws&u=admin&h=04d209b72f2c2982c462f592a3981408&op=sx&kwd=ruwasa&format=json"
 
 const now = new Date();
 console.log((date.format(now, 'dddd')).toLowerCase())
