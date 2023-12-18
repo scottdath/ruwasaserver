@@ -31,8 +31,8 @@ export const pdweeklyfetch = async() =>
                 connection.query( "UPDATE messagenos SET currentid = ?, previousid = ?  WHERE id = ?", [String(dat_len),String(dat_len),1], (err, rows) => {
                 connection.release() 
                 if (!err) {
-                     let n = 50;  // replace with num_of_messages var
-                      while(n >= 0){
+                   let n = 0;  // replace with num_of_messages var
+                      for (n = 0; n<=num_of_message; n++){
                         let result = dat[ n ]
                         let message = result.msg 
                         let recv_time = result.dt
