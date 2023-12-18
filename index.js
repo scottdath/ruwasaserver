@@ -200,6 +200,15 @@ data.query(`CREATE TABLE IF NOT EXISTS hhcmessages (
   });
 
 
+  data.query(`CREATE TABLE IF NOT EXISTS messagenos (
+    id INT(255) UNIQUE PRIMARY KEY AUTO_INCREMENT,
+    previousid VARCHAR(255),
+    currentid VARCHAR(255)
+  )`, (err, result) => {
+    if (err) throw err;
+  });
+
+
 
   data.query(`CREATE TABLE IF NOT EXISTS user (
     id INT(255) UNIQUE PRIMARY KEY AUTO_INCREMENT,
