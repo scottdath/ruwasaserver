@@ -45,7 +45,7 @@ export const hhcdataFetch = async() =>
                         let full_list = in_msg.split( '#' )
                         let data_length = full_list.length
                         let messageid = result.id
-                        console.log(full_list) 
+                        console.log(full_list)  
 
                          if (data_length > 3) {
                          
@@ -89,64 +89,64 @@ export const hhcdataFetch = async() =>
                             connection.query('SELECT * from hhcmessages', (err, rows) => {
                               connection.release() 
                               if (rows.length > 0){
-                                   const time = rows[0].reporttime.split(":")[0]
-                                   const meterno = rows[0].meterno
-                                   const consumptions = Number(rows[0].litres) - Number(ltres)
+                                  //  const time = rows[0].reporttime.split(":")[0]
+                                  //  const meterno = rows[0].meterno
+                                  //  const consumptions = Number(rows[0].litres) - Number(ltres)
                   
-                                  //  console.log(Number(time))
+                                  // //  console.log(Number(time))
                   
-                                   if (time >= 19 ){
-                                      const q = "UPDATE pmsdaily SET night = ? WHERE meterno = ?"
+                                  //  if (time >= 19 ){
+                                  //     const q = "UPDATE pmsdaily SET night = ? WHERE meterno = ?"
                   
-                                              data.query(q,[consumptions, meterno],(err,data)=>{
-                                                  if (err) {
-                                                    // console.log(err)
-                                                  }else{
-                                                    // console.log(" data updated successful!");
-                                                  }
+                                  //             data.query(q,[consumptions, meterno],(err,data)=>{
+                                  //                 if (err) {
+                                  //                   // console.log(err)
+                                  //                 }else{
+                                  //                   // console.log(" data updated successful!");
+                                  //                 }
                                                   
-                                              })
+                                  //             })
                   
-                                   }else if (time > 11 && time < 19){
+                                  //  }else if (time > 11 && time < 19){
 
-                                    const q = "UPDATE pmsdaily SET evening = ? WHERE meterno = ?"
+                                  //   const q = "UPDATE pmsdaily SET evening = ? WHERE meterno = ?"
                   
-                                              data.query(q,[consumptions, meterno],(err,data)=>{
-                                                  if (err) {
-                                                    // console.log(err)
-                                                  }else{
-                                                    // console.log(" data updated successful!");
-                                                  }
+                                  //             data.query(q,[consumptions, meterno],(err,data)=>{
+                                  //                 if (err) {
+                                  //                   // console.log(err)
+                                  //                 }else{
+                                  //                   // console.log(" data updated successful!");
+                                  //                 }
                                                   
-                                              })
+                                  //             })
                   
-                                   }else if (time < 11 && time >= 4){
+                                  //  }else if (time < 11 && time >= 4){
 
-                                    const q = "UPDATE pmsdaily SET morning = ? WHERE meterno = ?"
+                                  //   const q = "UPDATE pmsdaily SET morning = ? WHERE meterno = ?"
                   
-                                              data.query(q,[consumptions, meterno],(err,data)=>{
-                                                  if (err) {
-                                                    // console.log(err)
-                                                  }else{
-                                                    // console.log(" data updated successful!");
-                                                  }
+                                  //             data.query(q,[consumptions, meterno],(err,data)=>{
+                                  //                 if (err) {
+                                  //                   // console.log(err)
+                                  //                 }else{
+                                  //                   // console.log(" data updated successful!");
+                                  //                 }
                                                   
-                                              })
+                                  //             })
                   
-                                   }else if (time < 4 ){
+                                  //  }else if (time < 4 ){
 
-                                    const q = "UPDATE pmsdaily SET night = ? WHERE meterno = ?"
+                                  //   const q = "UPDATE pmsdaily SET night = ? WHERE meterno = ?"
                   
-                                              data.query(q,[consumptions, meterno],(err,data)=>{
-                                                  if (err) {
-                                                    // console.log(err)
-                                                  }else{
-                                                    // console.log(" data updated successful!");
-                                                  }
+                                  //             data.query(q,[consumptions, meterno],(err,data)=>{
+                                  //                 if (err) {
+                                  //                   // console.log(err)
+                                  //                 }else{
+                                  //                   // console.log(" data updated successful!");
+                                  //                 }
                                                   
-                                              })
+                                  //             })
                   
-                                   }
+                                  //  }
 
                       
                                 }
