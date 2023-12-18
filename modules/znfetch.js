@@ -37,7 +37,7 @@ export const zndataFetch = async() =>
                 // connection.release() 
                 if (!err) {
                      let n = 50;  // replace with num_of_messages var
-                      while(num_of_message > 0){
+                      for (var i = 0; i<=num_of_message; i++){
                         let result = dat[ n ]
                         let message = result.msg 
                         let recv_time = result.dt
